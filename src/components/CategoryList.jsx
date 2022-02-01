@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
 export default function CategoryList({ movieCategories }) {
   console.log('movieCategories', movieCategories);
@@ -8,6 +8,11 @@ export default function CategoryList({ movieCategories }) {
   return (
     <div>
       <h1>Categories</h1>
+      {movieCategories.map(({ category, id }) => (
+        <Link key={id} to={`${url}/${id}`}>
+          {category}
+        </Link>
+      ))}
     </div>
   );
 }
