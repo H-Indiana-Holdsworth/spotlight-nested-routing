@@ -6,6 +6,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import './App.css';
+import CategoryList from './components/CategoryList';
 
 const movieCategories = [
   {
@@ -73,20 +74,14 @@ const movieCategories = [
   },
 ];
 
-function Movie() {}
-
-function MovieList() {}
-
-function CategoryList() {}
-
-function Home() {
-  return <h1>Home</h1>;
-}
-
 export default function App() {
   return (
     <Router>
-      <div style={{ width: 1000, margin: '0 auto' }}></div>
+      <div style={{ width: 1000, margin: '0 auto' }}>
+        <Route exact path="/categories">
+          <CategoryList movieCategories={movieCategories} />
+        </Route>
+      </div>
     </Router>
   );
 }
