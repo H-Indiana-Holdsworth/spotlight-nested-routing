@@ -78,6 +78,8 @@ export default function App() {
   return (
     <Router>
       <div style={{ width: 1000, margin: '0 auto' }}>
+        <Link to="/">Home</Link>
+        <Link to="categories">Categories</Link>
         <Route exact path="/categories">
           <CategoryList movieCategories={movieCategories} />
         </Route>
