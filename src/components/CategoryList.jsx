@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link, useRouteMatch, Route } from 'react-router-dom';
+import MovieList from './MovieList';
 
 export default function CategoryList({ movieCategories }) {
-  console.log('movieCategories', movieCategories);
   const { url, path } = useRouteMatch();
 
   return (
@@ -13,6 +13,10 @@ export default function CategoryList({ movieCategories }) {
           {category}
         </Link>
       ))}
+
+      <Route path={`${path}/:categoryId`}>
+        <MovieList />
+      </Route>
     </div>
   );
 }
